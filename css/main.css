@@ -21,6 +21,17 @@ footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
     height: 350px;
     background-size: contain;
 }
+.banner .banner-description {
+    top: 21%;
+    height: 150px;
+    margin: 0 auto;
+    width: 50%;
+    background-color: #fec726;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    font-size: 55px;
+}
 
 /* Blog */
 ul.posts { margin: 20px auto 40px; font-size: 1.5em; }
