@@ -14,8 +14,9 @@ h4 { font-size: 1.9em; }
 nav ul, footer ul {
      font-size: 1em; 
      font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
-     padding: 30px 40px; 
-     list-style: none; 
+     padding: 20px 40px; 
+     list-style: none;
+    background-color: #222;
 }
 nav ul li, footer ul li {
     display: inline;
