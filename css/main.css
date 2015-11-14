@@ -11,8 +11,24 @@ h2 { font-size: 2.7em; }
 h3 { font-size: 2.3em; }
 h4 { font-size: 1.9em; }
 
-nav ul, footer ul { font-size: 1em; font-family: 'Helvetica', 'Arial', 'Sans-Serif'; padding: 0px; list-style: none; font-weight: bold; }
-nav ul li, footer ul li { display: inline; margin-right: 20px; }
+nav ul, footer ul {
+     font-size: 1em; 
+     font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
+     padding: 30px 40px; 
+     list-style: none; 
+}
+nav ul li, footer ul li {
+    display: inline;
+    margin-right: 40px;
+    font-size: 17px;
+}
+nav ul li a,nav ul li a:visited, footer ul li a{
+    color: #ccc;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: white;
+}
 
 footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
 .banner {
@@ -23,9 +39,9 @@ footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
 }
 .banner .banner-description {
     height: 100%;
-    width: 327px;
+    width: 400px;
     background-color: #fec726;
-    padding: 30px;
+    padding: 30px 40px;
     position: relative;
     opacity: 0.9;
     font-size: 25px;
