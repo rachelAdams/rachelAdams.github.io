@@ -22,13 +22,13 @@ footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
     background-size: contain;
 }
 .banner .banner-description {
-    top: 21%;
-    margin: 0 auto;
-    width: 50%;
+    height: 100%;
+    width: 327px;
     background-color: #fec726;
-    padding: 45px;
-    text-align: center;
+    padding: 30px;
     position: relative;
+    opacity: 0.9;
+    font-size: 25px;
 }
 
 /* Blog */
