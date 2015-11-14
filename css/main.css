@@ -25,10 +25,11 @@ nav ul li, footer ul li {
 }
 nav ul li a,nav ul li a:visited, footer ul li a{
     color: #ccc;
-    text-decoration: none;
+
 }
 nav ul li a:hover {
     color: white;
+        text-decoration: none;
 }
 
 footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
