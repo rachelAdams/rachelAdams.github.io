@@ -1,5 +1,5 @@
-angular.module('rachelApp.controllers', []).
-app.controller('rachelCtrl', function ($scope, githubApiService) {
+angular.module('rachelApp.controllers', [])
+.controller('rachelCtrl', function ($scope, githubApiService) {
     $scope.name = "Rachel Adams";
 
         githubApiService.getRepos().success(function (response) {
