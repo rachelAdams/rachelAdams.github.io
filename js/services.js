@@ -5,7 +5,7 @@ angular.module('rachelApp.services', []).
 
     githubApi.getRepos = function() {
       return $http({
-        method: 'JSONP', 
+        method: 'GET', 
         url: 'https://api.github.com/users/racheladams/repos'
       });
     }
