@@ -2,11 +2,12 @@
 layout: default
 ---
 <div ng-controller="rachelCtrl">
-I'm practicing some Angular stuff and my name is <span ng-bind="name"></span>.
-<div>OMG WOW RACE CAR DRIVERS YESSS</div>
-<input type="text" ng-model="nameFilter" placeholder="Search..."/>
+<h1 style="padding:10px">Check out this sweet race car driver searching!</h1>
+<input type="text" ng-model="nameFilter" placeholder="Search"/>
 <div ng-repeat="driver in repos | orderBy: 'Driver.givenName'| filter: nameFilter">
-  <span ng-bind="driver.Driver.givenName"></span>
-  <span ng-bind="driver.Driver.familyName"></span>
+  <div style="padding:5px">
+    <span ng-bind="driver.Driver.givenName"></span>
+    <span ng-bind="driver.Driver.familyName"></span>
+  </div>
 </div>
 </div>
