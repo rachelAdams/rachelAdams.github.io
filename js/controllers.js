@@ -4,6 +4,6 @@ angular.module('rachelApp.controllers', [])
 
         githubApiService.getRepos().success(function (response) {
         //Dig into the responde to get the relevant data
-        $scope.repos = response;
+         $scope.repos = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
     });
 });
