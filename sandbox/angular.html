@@ -3,9 +3,9 @@ layout: default
 ---
 <div ng-controller="rachelCtrl">
 <h3 style="padding-bottom:10px">Check out this sweet race car driver searching!</h3>
-<input type="text" ng-model="nameFilter" placeholder="Search"style="padding-bottom:10px" />
+<input type="text" ng-model="nameFilter" placeholder="Search"/>
 <div ng-repeat="driver in repos | orderBy: 'Driver.givenName'| filter: nameFilter">
-  <div style="padding-bottom:5px">
+  <div style="padding-top:5px">
     <span ng-bind="driver.Driver.givenName"></span>
     <span ng-bind="driver.Driver.familyName"></span>
   </div>
