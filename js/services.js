@@ -4,8 +4,9 @@ angular.module('rachelApp.services', []).
     var githubApi = {};
 
     githubApi.getRepos = function() {
-      $http.get({
-        url: 'https://api.github.com/users/racheladams/repos',
+      return $http({
+        method: 'JSONP', 
+        url: 'http://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK'
       });
     }
 
