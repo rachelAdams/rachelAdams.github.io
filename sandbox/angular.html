@@ -3,7 +3,7 @@ layout: default
 ---
 <div ng-controller="rachelCtrl">
 I'm practicing some Angular stuff and my name is <span ng-bind="name"></span>.
-<div ng-repeat="driver in repos | orderBy: 'familyName' as driver.Driver.familyName">
+<div ng-repeat="driver in repos">
   <span ng-bind="driver.Driver.givenName"></span>
   <span ng-bind="driver.Driver.familyName"></span>
 </div>
