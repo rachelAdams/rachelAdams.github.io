@@ -12,14 +12,14 @@ Quick notes on defining defining modules, directives, controllers, and services 
 
 Assuming there are controllers.js and services.js files included
 
-```javascript
+```
 angular.module( 'myApp', [ 'myApp.controllers', 'myApp.services' ] ); 
 ```
 
 
 ###Defining a directive:
 
-```javascript
+```
 angular.module('myApp')
 .directive('mySharedScope', function () {
     return {
@@ -34,7 +34,7 @@ angular.module('myApp')
 
 ###Defining a service:
 
-```javascript
+```
 angular.module('myApp.services', [])
 .factory('racecarDriverService', function($http) {
 	//methods, etc here
@@ -43,7 +43,7 @@ angular.module('myApp.services', [])
 
 ###Creating a method:
 
-```javascript
+```
 angular.module('myApp.services', [])
 .factory('racecarDriverService', function($http) {
     var racecarDrivers = {};
@@ -62,7 +62,7 @@ angular.module('myApp.services', [])
 
 ###Defining a controller:
 
-```javascript
+```
 angular.module('myApp.controllers', [])
 .controller('myCtrl', function ($scope, racerDriverService) {
 	// methods, etc here
@@ -71,7 +71,7 @@ angular.module('myApp.controllers', [])
 
  ###Using your service in your controller:
 
-```javascript
+```
  angular.module('myApp.controllers', [])
 .controller('myCtrl', function ($scope, racerDriverService) {
 	racecarDriverService.getDrivers().success(function (response) {
