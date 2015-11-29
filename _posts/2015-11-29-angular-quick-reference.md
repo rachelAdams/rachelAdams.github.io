@@ -23,7 +23,7 @@ Assuming there are controllers.js and services.js files included
 	angular.module('myApp')
 	.directive('mySharedScope', function () {
     	return {
-    		template: "<span ng-bind='driver.Driver.givenName'></span> <span ng-bind='driver.Driver.familyName'></span><br /> <a href='driver.Driver.url'>Wikipedia</a>"
+    		template: "some reusable html template here"
     	};
 	});
 
@@ -35,7 +35,7 @@ Assuming there are controllers.js and services.js files included
 
 
 	angular.module('myApp.services', [])
-	.factory('racecarDriverService', function($http) {
+	.factory('myService', function($http) {
 	});
 
 
@@ -43,15 +43,15 @@ Assuming there are controllers.js and services.js files included
 
 
 	angular.module('myApp.services', [])
-	.factory('racecarDriverService', function($http) {
-    	var racecarDrivers = {};
-    	racecarDrivers.getDrivers = function() {
+	.factory('myService', function($http) {
+    	var myObject = {};
+    	myObject.getResults = function() {
     		return $http({
         		method: 'JSONP', 
-        		url: 'http://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK'
+        		url: '/some-url'
       		});
     	}
-    	return racercarDrivers;
+    	return myObject;
 	});
 
 
@@ -61,16 +61,16 @@ Assuming there are controllers.js and services.js files included
 
 
 	angular.module('myApp.controllers', [])
-	.controller('myCtrl', function ($scope, racerDriverService) {
+	.controller('myCtrl', function ($scope, myService) {
 	});
 
 ###Using your service in your controller:
 
 
 	angular.module('myApp.controllers', [])
-	.controller('myCtrl', function ($scope, racerDriverService) {
-		racecarDriverService.getDrivers().success(function (response) {
-	    	$scope.drivers = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+	.controller('myCtrl', function ($scope, myService) {
+		myService.getResults().success(function (response) {
+	    	$scope.results = response.something;
 	    });
 	});
 
