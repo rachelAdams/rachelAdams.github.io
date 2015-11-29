@@ -3,7 +3,7 @@ layout: default
 ---
 <div ng-controller="rachelCtrl">
 <h3>Save a thing to local storage!</h3>
-<div ng-model="localStorageVal">Your current local storage value is: <span ng-bind="localStorageVal"></span></div>
-	<input type="text" ng-model="localStorageVal" placeholder="Local storage value"/>
-	<a ng-click="saveToLocalStorage()" ng-show="localStorageVal != ''">Store it!</a>
+<div ng-model="localStorageVal"  style="padding-bottom:10px;">Your current local storage value is: <span ng-bind="currentLocalVal"></span></div>
+	<input type="text" ng-model="newLocalVal" placeholder="Local storage value"/>
+	<a ng-click="saveToLocalStorage()" ng-show="newLocalVal != ''">Store it!</a>
 </div>
