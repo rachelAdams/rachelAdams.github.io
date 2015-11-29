@@ -8,7 +8,7 @@ Quick notes on defining defining modules, directives, controllers, and services 
 
 ##In app.js:
 
-   ###Defining a module:  
+###Defining a module:
 
    Assuming there are controllers.js and services.js files included  
 
