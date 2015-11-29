@@ -4,15 +4,20 @@ title: "Angular: Quick Reference"
 date: 2015-11-29
 ---
 Quick notes on defining defining modules, directives, controllers, and services in Angular. All snippets below correspond to examples in the Sandbox section.
+
 ##In app.js:
+
 ###Defining a module:
+
 Assuming there are controllers.js and services.js files included
+
 '''
 angular.module( 'myApp', [ 'myApp.controllers', 'myApp.services' ] ); 
 '''
 
 
 ###Defining a directive:
+
 '''
 angular.module('myApp')
 .directive('mySharedScope', function () {
@@ -25,7 +30,9 @@ angular.module('myApp')
 
 
 ##In services.js:
+
 ###Defining a service:
+
 '''
 angular.module('myApp.services', []).
   factory('racecarDriverService', function($http) {
@@ -34,6 +41,7 @@ angular.module('myApp.services', []).
 '''
 
 ###Creating a method:
+
 '''
 angular.module('myApp.services', []).
   factory('racecarDriverService', function($http) {
@@ -53,14 +61,18 @@ angular.module('myApp.services', []).
 
 
 ##In controllers.js:
+
 ###Defining a controller:
+
 '''
 angular.module('myApp.controllers', [])
 .controller('myCtrl', function ($scope, racerDriverService) {
 // methods, etc here
 });
 '''
+
  ###Using your service in your controller:
+
  '''
  angular.module('myApp.controllers', [])
 .controller('myCtrl', function ($scope, racerDriverService) {
