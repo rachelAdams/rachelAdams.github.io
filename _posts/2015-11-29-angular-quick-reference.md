@@ -3,35 +3,39 @@ layout: post
 title: "Angular: Quick Reference"
 date: 2015-11-29
 ---
-<p>Quick notes on defining defining modules, directives, controllers, and services in Angular. All snippets below correspond to examples in the Sandbox section.</p>
+Quick notes on defining defining modules, directives, controllers, and services in Angular. All snippets below correspond to examples in the Sandbox section.
+##In app.js:
+###Defining a module:
+Assuming there are controllers.js and services.js files included
+'''
+angular.module( 'myApp', [ 'myApp.controllers', 'myApp.services' ] ); 
+'''
 
-<h1>In app.js:</h1>
-<h2>Defining a module:</h2>
-<p>Assuming there are controllers.js and services.js files included</p>
-<code>angular.module( 'myApp', [ 'myApp.controllers', 'myApp.services' ] ); </code>
 
-
-<h2> Defining a directive:</h2>
-<code>angular.module('myApp')
+###Defining a directive:
+'''
+angular.module('myApp')
 .directive('mySharedScope', function () {
     return {
         template: "<span ng-bind='driver.Driver.givenName'></span> <span ng-bind='driver.Driver.familyName'></span><br /> <a href='driver.Driver.url'>Wikipedia</a>" //your template here
     };
 
 });
-</code>
+'''
 
 
-<h1>In services.js:</h1>
-<h2>Defining a service:</h2>
-<code>angular.module('myApp.services', []).
+##In services.js:
+###Defining a service:
+'''
+angular.module('myApp.services', []).
   factory('racecarDriverService', function($http) {
    //methods, etc here
   });
-</code>
+'''
 
-<h2>Creating a method:</h2>
-<code>angular.module('myApp.services', []).
+###Creating a method:
+'''
+angular.module('myApp.services', []).
   factory('racecarDriverService', function($http) {
 
     var racecarDrivers = {};
@@ -45,19 +49,19 @@ date: 2015-11-29
 
     return racercarDrivers;
   });
-</code>
+'''
 
 
-<h1>In controllers.js:</h1>
-<h2>Defining a controller:</h2>
-<code>
+##In controllers.js:
+###Defining a controller:
+'''
 angular.module('myApp.controllers', [])
 .controller('myCtrl', function ($scope, racerDriverService) {
 // methods, etc here
 });
- </code>
- <h2>Using your service in your controller:</h2>
- <code>
+'''
+ ###Using your service in your controller:
+ '''
  angular.module('myApp.controllers', [])
 .controller('myCtrl', function ($scope, racerDriverService) {
 
@@ -65,4 +69,4 @@ angular.module('myApp.controllers', [])
     	$scope.drivers = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
     });
 });
- </code>
+'''
