@@ -36,15 +36,16 @@ footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
 .banner {
     background-image: url("/img/banner_img.jpg");
      width: 100%;
-    height: 300px;
+    height: 250px;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .banner .banner-description {
     height: 100%;
     width: 400px;
     background-color: #fec726;
-    padding: 30px 40px;
+    padding: 20px 40px;
     position: relative;
     opacity: 0.9;
     font-size: 25px;
