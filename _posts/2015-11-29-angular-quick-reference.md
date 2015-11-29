@@ -12,18 +12,18 @@ Quick notes on defining defining modules, directives, controllers, and services 
 
 Assuming there are controllers.js and services.js files included
 
-```
+```javascript
 angular.module( 'myApp', [ 'myApp.controllers', 'myApp.services' ] ); 
 ```
 
 
 ###Defining a directive:
 
-```
+```javascript
 angular.module('myApp')
 .directive('mySharedScope', function () {
     return {
-    	template: "<span ng-bind='driver.Driver.givenName'></span> <span ng-bind='driver.Driver.familyName'></span><br /> <a href='driver.Driver.url'>Wikipedia</a>" //your template here
+    	template: "<span ng-bind='driver.Driver.givenName'></span> <span ng-bind='driver.Driver.familyName'></span><br /> <a href='driver.Driver.url'>Wikipedia</a>"
     };
 
 });
@@ -34,16 +34,15 @@ angular.module('myApp')
 
 ###Defining a service:
 
-```
+```javascript
 angular.module('myApp.services', [])
 .factory('racecarDriverService', function($http) {
-	//methods, etc here
- });
+});
 ```
 
 ###Creating a method:
 
-```
+```javascript
 angular.module('myApp.services', [])
 .factory('racecarDriverService', function($http) {
     var racecarDrivers = {};
@@ -62,16 +61,15 @@ angular.module('myApp.services', [])
 
 ###Defining a controller:
 
-```
+```javascript
 angular.module('myApp.controllers', [])
 .controller('myCtrl', function ($scope, racerDriverService) {
-	// methods, etc here
 });
 ```
 
  ###Using your service in your controller:
 
-```
+```javascript
  angular.module('myApp.controllers', [])
 .controller('myCtrl', function ($scope, racerDriverService) {
 	racecarDriverService.getDrivers().success(function (response) {
