@@ -22,7 +22,7 @@ angular.module( 'myApp', [ 'myApp.controllers', 'myApp.services' ] );
 angular.module('myApp')
 .directive('mySharedScope', function () {
     return {
-        template: "<span ng-bind='driver.Driver.givenName'></span> <span ng-bind='driver.Driver.familyName'></span><br /> <a href='driver.Driver.url'>Wikipedia</a>" //your template here
+    	template: "<span ng-bind='driver.Driver.givenName'></span> <span ng-bind='driver.Driver.familyName'></span><br /> <a href='driver.Driver.url'>Wikipedia</a>" //your template here
     };
 
 });
@@ -34,29 +34,26 @@ angular.module('myApp')
 ###Defining a service:
 
 '''
-angular.module('myApp.services', []).
-  factory('racecarDriverService', function($http) {
-   //methods, etc here
-  });
+angular.module('myApp.services', [])
+.factory('racecarDriverService', function($http) {
+	//methods, etc here
+ });
 '''
 
 ###Creating a method:
 
 '''
-angular.module('myApp.services', []).
-  factory('racecarDriverService', function($http) {
-
+angular.module('myApp.services', [])
+.factory('racecarDriverService', function($http) {
     var racecarDrivers = {};
-
     racecarDrivers.getDrivers = function() {
-      return $http({
-        method: 'JSONP', 
-        url: 'http://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK'
-      });
+    	return $http({
+        	method: 'JSONP', 
+        	url: 'http://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK'
+      	});
     }
-
     return racercarDrivers;
-  });
+});
 '''
 
 
@@ -67,7 +64,7 @@ angular.module('myApp.services', []).
 '''
 angular.module('myApp.controllers', [])
 .controller('myCtrl', function ($scope, racerDriverService) {
-// methods, etc here
+	// methods, etc here
 });
 '''
 
@@ -76,8 +73,7 @@ angular.module('myApp.controllers', [])
  '''
  angular.module('myApp.controllers', [])
 .controller('myCtrl', function ($scope, racerDriverService) {
-
-    racecarDriverService.getDrivers().success(function (response) {
+	racecarDriverService.getDrivers().success(function (response) {
     	$scope.drivers = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
     });
 });
