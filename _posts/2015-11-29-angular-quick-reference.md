@@ -12,7 +12,5 @@ Quick notes on defining defining modules, directives, controllers, and services 
 
 Assuming there are controllers.js and services.js files included
 
-'''
-angular.module( 'myApp', [ 'myApp.controllers', 'myApp.services' ] ); 
-'''
+'angular.module( 'myApp', [ 'myApp.controllers', 'myApp.services' ] ); '
 
