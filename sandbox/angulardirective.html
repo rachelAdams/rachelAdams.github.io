@@ -2,6 +2,8 @@
 layout: default
 ---
 <div ng-controller="rachelCtrl">
-<h3 style="padding-bottom:10px">Check out this sweet angular directive!</h3>
-<div my-shared-scope></div>
+	<h3 style="padding-bottom:10px">Check out this sweet angular directive!</h3>
+	<div ng-repeat="driver in drivers | orderBy: 'Driver.givenName'| filter: nameFilter">
+		<div my-shared-scope></div>
+	</div>
 </div>
