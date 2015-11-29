@@ -12,67 +12,65 @@ Quick notes on defining defining modules, directives, controllers, and services 
 
 Assuming there are controllers.js and services.js files included
 
-```javascript
-angular.module( 'myApp', [ 'myApp.controllers', 'myApp.services' ] ); 
-```
+
+	angular.module( 'myApp', [ 'myApp.controllers', 'myApp.services' ] ); 
+
 
 
 ###Defining a directive:
 
-```javascript
-angular.module('myApp')
-.directive('mySharedScope', function () {
-    return {
-    	template: "<span ng-bind='driver.Driver.givenName'></span> <span ng-bind='driver.Driver.familyName'></span><br /> <a href='driver.Driver.url'>Wikipedia</a>"
-    };
-});
-```
+
+	angular.module('myApp')
+	.directive('mySharedScope', function () {
+    	return {
+    		template: "<span ng-bind='driver.Driver.givenName'></span> <span ng-bind='driver.Driver.familyName'></span><br /> <a href='driver.Driver.url'>Wikipedia</a>"
+    	};
+	});
+
 
 
 ##In services.js:
 
 ###Defining a service:
 
-```javascript
-angular.module('myApp.services', [])
-.factory('racecarDriverService', function($http) {
-});
-```
+
+	angular.module('myApp.services', [])
+	.factory('racecarDriverService', function($http) {
+	});
+
 
 ###Creating a method:
 
-```javascript
-angular.module('myApp.services', [])
-.factory('racecarDriverService', function($http) {
-    var racecarDrivers = {};
-    racecarDrivers.getDrivers = function() {
-    	return $http({
-        	method: 'JSONP', 
-        	url: 'http://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK'
-      	});
-    }
-    return racercarDrivers;
-});
-```
+
+	angular.module('myApp.services', [])
+	.factory('racecarDriverService', function($http) {
+    	var racecarDrivers = {};
+    	racecarDrivers.getDrivers = function() {
+    		return $http({
+        		method: 'JSONP', 
+        		url: 'http://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK'
+      		});
+    	}
+    	return racercarDrivers;
+	});
 
 
 ##In controllers.js:
 
 ###Defining a controller:
 
-```javascript
-angular.module('myApp.controllers', [])
-.controller('myCtrl', function ($scope, racerDriverService) {
-});
-```
 
- ###Using your service in your controller:
+	angular.module('myApp.controllers', [])
+	.controller('myCtrl', function ($scope, racerDriverService) {
+	});
 
-```javascript
- angular.module('myApp.controllers', [])
-.controller('myCtrl', function ($scope, racerDriverService) {
-	racecarDriverService.getDrivers().success(function (response) {
-    	$scope.drivers = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
-    });
-});
-```
+###Using your service in your controller:
+
+
+	angular.module('myApp.controllers', [])
+	.controller('myCtrl', function ($scope, racerDriverService) {
+		racecarDriverService.getDrivers().success(function (response) {
+	    	$scope.drivers = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+	    });
+	});
+
